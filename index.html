@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World History Timeline Explorer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>World History Timeline Explorer</h1>
+    <p>Slide through time (5500 BC → today) and click a polity to compare politics, economy, demographics, and culture.</p>
+  </header>
+
+  <main class="app-main">
+    <section id="map" aria-label="Historical world map"></section>
+    <aside class="info-panel" aria-live="polite">
+      <h2 id="selected-title">Select a polity</h2>
+      <p id="selected-period">Move the timeline, then click a highlighted area on the map.</p>
+      <div class="info-grid">
+        <article>
+          <h3>Politics</h3>
+          <p id="politics">—</p>
+        </article>
+        <article>
+          <h3>Economy</h3>
+          <p id="economy">—</p>
+        </article>
+        <article>
+          <h3>Demographics</h3>
+          <p id="demographics">—</p>
+        </article>
+        <article>
+          <h3>Culture</h3>
+          <p id="culture">—</p>
+        </article>
+      </div>
+      <a id="wiki-link" href="#" target="_blank" rel="noopener noreferrer" class="wiki-link hidden">Read more on Wikipedia</a>
+    </aside>
+  </main>
+
+  <footer class="timeline-wrap">
+    <label for="timeline">Year: <strong id="year-label"></strong></label>
+    <input id="timeline" type="range" min="-5500" max="2025" step="25" value="2025" />
+    <div class="timeline-hint">Increments: 25 years</div>
+    <div id="active-count"></div>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
